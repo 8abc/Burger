@@ -1,4 +1,7 @@
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("Super Duper Burger", "true"),
-VALUES ("Smash Burger", "false"),
-VALUES ("In-n-Out Burger", "false");
+VALUES 
+("Five Guys", false),
+("Bobs Burger", false),
+("Super Duper Burger", false),
+ ("Smash Burger", false),
+ ("InNOut Burger", false);

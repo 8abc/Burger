@@ -3,5 +3,5 @@ VALUES
 ("Five Guys", false),
 ("Bobs Burger", false),
 ("Super Duper Burger", false),
- ("Smash Burger", false),
- ("InNOut Burger", false);
+("Smash Burger", false),
+("InNOut Burger", false);

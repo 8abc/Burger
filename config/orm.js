@@ -6,15 +6,25 @@ const connection = require("./connection");
 const orm = {
     // this will query the database for the burgers table
     selectAll: function(tableInput, cb) {
-        connection.query("SELECT * FROM ?", [tableInput], function (err, res) {
-            if (err) return cb(err,null);
-            cb(null,res);
+      let queryString = "SELECT * FROM " + tableInput + ";";
+        connection.query(queryString, function (err, res) {
+            if (err) {
+              return err;
+            }
+            cb(res);
           });
            
-        }
-    
+        }  
 };
 
-
+// all: function(tableInput, cb) {
+//   var queryString = "SELECT * FROM " + tableInput + ";";
+//   connection.query(queryString, function(err, result) {
+//     if (err) {
+//       throw err;
+//     }
+//     cb(result);
+//   });
+// },
 module.exports = orm;
 

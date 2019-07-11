@@ -1,5 +1,6 @@
 // require packages
 require('dotenv').config()
+// require('./config/connection');
 const express = require("express");
 const exphbs = require("express-handlebars");
 const PORT = process.env.PORT || 3001;

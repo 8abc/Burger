@@ -1,1 +1,28 @@
-<h1>Hi I'm index.handlerbars</h1>
+<div class="container content">
+    <h1>BurgerLogger</h1>
+
+    <div class="burger-content">
+        {{!-- goes through the burgers in our database--}}
+        {{#each burgers}}
+            <div class="burger-list" id={{id}}>
+                <img src="" alt="">
+                <p>{{burger_name}}</p>
+                <button type="button" class="btn btn-primary" data-id="{{id}}" data-state="{{devoured}}">
+                    {{#if {{devoured}} }}
+                </button>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{{!-- goes through the burgers object --}}
+{{!-- {{#each burgers}}
+    <p>{{id}}</p>
+    <p>{{burger_name}}</p>
+    <p>{{devoured}}</p>
+{{/each}} --}}

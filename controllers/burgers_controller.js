@@ -10,10 +10,13 @@ router.get("/", function(req,res){
     });
 });
 
-router.post("/insert", function(req,res){
+router.post("/add", function(req,res){
     Burgers.insertOne(req.body.burgerName, function(burgerName) {
-        res.status(200).json(burgerName);
-        
-    }) 
-})
+        res.status(200).json({
+            burger_name: burgerName,
+            id: burgerName.insertId,
+            devoured: 0
+        });
+    }); 
+});
 module.exports = router;

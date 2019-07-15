@@ -1,5 +1,11 @@
-<div class="container content">
+<div class="container-content">
     <h1>BurgerLogger</h1>
+    <form>
+        <div class="form-group">
+            <input type="text" required placeholder="Add a burger" class="form-control" name="burger_name">
+        </div>
+            <button type="submit" class="btn btn-primary">Add a Burger</button>
+    </form>
 
     <div class="burger-content">
         {{!-- goes through the burgers in our database--}}
@@ -8,9 +14,10 @@
                 <img src="" alt="">
                 <p>{{burger_name}}</p>
                 <button type="button" class="btn btn-primary" data-id="{{id}}" data-state="{{devoured}}">
-                    {{#if {{devoured}} }}
+                    {{#if devoured}} remove {{else}} Devour it {{/if}}
                 </button>
             </div>
+        {{/each}}
     </div>
 </div>
 
@@ -19,10 +26,3 @@
 
 
 
-
-{{!-- goes through the burgers object --}}
-{{!-- {{#each burgers}}
-    <p>{{id}}</p>
-    <p>{{burger_name}}</p>
-    <p>{{devoured}}</p>
-{{/each}} --}}

@@ -16,9 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 // configure routes
 app.use("/", routes);
-//css
 app.use(express.static("public"));
-
 app.listen(PORT, () => {
     console.log("Server is starting on PORT : ", PORT);
 });

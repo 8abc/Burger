@@ -11,7 +11,8 @@
         {{!-- goes through the burgers in our database--}}
         {{#each burgers}}
             <div class="burger-list" id={{id}}>
-                <img src="" alt="">
+                <div class="burgerImage"><img class="burgerImage" src="/img/bobsburger.png" alt="">
+                </div>
                 <p>{{burger_name}}</p>
                 <button type="button" class="btn btn-primary" data-id="{{id}}" data-state="{{devoured}}">
                     {{#if devoured}} remove {{else}} Devour it {{/if}}

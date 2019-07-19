@@ -11,6 +11,7 @@ router.get("/", function(req,res){
 });
 
 router.post("/add", function(req,res){
+    console.log("Adding buger: " , req.body.burgerName);
     Burgers.insertOne(req.body.burgerName, function(burgerName) {
         res.status(200).json({
             burger_name: burgerName,

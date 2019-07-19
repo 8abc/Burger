@@ -7,23 +7,25 @@ const orm = {
     // this will query the database for the burgers table
     selectAll: function(tableName, cb) {
       let queryString = "SELECT * FROM " + tableName + ";";
-      queryDb(queryString, cb);
+      queryDb(queryString, null, cb);
         },  
     insertOne: function(burgerName, cb) {
-      let queryString = `INSERT INTO burgers (burger_name, devoured) VALUES ( ${burgerName}, false);`
-      queryDb(queryString, cb);
+      console.log("orm burger: ", burgerName);
+      let queryString = `INSERT INTO burgers (burger_name, devoured) VALUES ( ?, false);`
+      let name =[burgerName]
+      queryDb(queryString, name, cb);
         },
     updateOne: function(burgerName, devoured, cb) {
       let queryString = `UPDATE burgers SET devoured = ${devoured} WHERE burger_name ${burgerName};`
-        queryDb(queryString, cb);
+        queryDb(queryString, null, cb);
     } 
   
 };
 
-function queryDb(queryString,cb) {
-  connection.query(queryString, function(err, res) {
-    console.log("error: " ,err);
+function queryDb(queryString, plugIn, cb) {
+  connection.query(queryString, plugIn, function(err, res) {
     if (err) {
+      console.log("error: " ,err);
       return (err);
     }
     cb(res);

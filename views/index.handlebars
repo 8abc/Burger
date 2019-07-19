@@ -4,7 +4,7 @@
         <div class="form-group">
             <input type="text" required placeholder="Add a burger" class="form-control" name="burger_name">
         </div>
-            <button type="submit" class="btn btn-primary">Add a Burger</button>
+            <button type="button" id="addBurger" class="btn btn-primary">Add a Burger</button>
     </form>
 
     <div class="burger-content">
@@ -15,7 +15,7 @@
                 </div>
                 <p>{{burger_name}}</p>
                 <button type="button" class="btn btn-primary" data-id="{{id}}" data-state="{{devoured}}">
-                    {{#if devoured}} remove {{else}} Devour it {{/if}}
+                    {{#if devoured}} not {{else}} Devour it {{/if}}
                 </button>
             </div>
         {{/each}}

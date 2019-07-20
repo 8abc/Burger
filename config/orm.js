@@ -1,7 +1,6 @@
 // this is where I will query my database
-// this is the skeleton
 // import and require the connection
-const connection = require("./connection");
+const connection = require("./connection.js");
 
 const orm = {
     // this will query the database for the burgers table
@@ -18,6 +17,10 @@ const orm = {
     updateOne: function(burgerName, devoured, cb) {
       let queryString = `UPDATE burgers SET devoured = ${devoured} WHERE burger_name ${burgerName};`
         queryDb(queryString, null, cb);
+    }, 
+    deleteOne: function(id, cb) {
+      let queryString = `DELETE FROM burgers WHERE id = ${id};`
+        queryDb(queryString, id, cb);
     } 
   
 };

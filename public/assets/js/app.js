@@ -60,3 +60,16 @@ $('#addBurger').on("click", function(event){
         alert("Burger wasn't added");
     });
 });
+
+$("#devoured").on("click", function(){
+    const id = $(this).attr("data-id");
+
+    $.ajax({
+        url:"/devoured" + id,
+        method: "DELETE" 
+    })
+    .then(console.log("Devoured", id))
+    .catch(console.log("Burger was not devoured"));
+});
+
+   
